@@ -10,7 +10,7 @@
   - name: start nginx 
     ansible.builtin.service:
       name: nginx
-      sate: started
+      state: started
       enabled: yes
 
   - name: remove html directory
@@ -43,6 +43,6 @@
     ansible.builtin.service:
       name: nginx
       state: restarted
-      
+
 
     
