@@ -66,6 +66,14 @@
       name: all
       state: import
 
+  - name: demon reload
+    ansible.builtin.systemd_service:
+      state: restarted
+      daemon_reload: true
+      name: backend
+
+
+
 
 
 
