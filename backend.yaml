@@ -4,7 +4,7 @@
   vars:
     mysql_root_password: ExpenseApp@1
     login_host: mysql.sriharikalearningdevops.online
-    
+
   tasks:
   - name: disable default nodejs
     ansible.builtin.command: dnf module disable nodejs -y
@@ -47,7 +47,10 @@
       src: backend.service
       dest: /etc/systemd/system/backend.service
      
-
+  - name: install pymysql
+    ansible.builtin.pip:
+      name: pymysql
+      executable: pip3.9
     
   - name: import mysql data
     community.mysql.mysql_db:
